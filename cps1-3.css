@@ -103,16 +103,21 @@ body {
     padding-top: 88px;
     width: 100%;
 }
-
+.nav-wrapper{
+    overflow: hidden;
+}
 .content__nav {
+    position: relative;
     display: flex;
-    overflow-x: scroll;
-    -ms-overflow-style: none;
+    overflow: auto;
     line-height: 24px;
+
 }
 .content__nav::-webkit-scrollbar {
-    width: 0;
+    position: absolute;
+
 }
+
 .content__nav-button {
     font-family: 'TT Lakes Condensed', "Arial", sans-serif;
     font-weight: 500;
@@ -124,8 +129,11 @@ body {
     background-color: rgba(0, 0, 0, 0);
     padding: 10px 18px;
     letter-spacing: 0.2px;
+    flex-shrink: 0;
 }
-
+.content__nav-button:hover {
+    cursor: pointer;
+}
 .content__nav-button:focus {
     border: 2px solid #B8FFEC;
     border-radius: 6px;
@@ -161,6 +169,9 @@ body {
     height: 24px;
     letter-spacing: 0.2px;
 }
+.content__checkbox-label:hover{
+    cursor: pointer;
+}
 .content__checkbox-label:before {
     content: url("ic/expand.svg");
     display: inline-block;
@@ -176,6 +187,7 @@ body {
 }
 .content__checkbox:checked ~ .content__text{
     height: auto;
+    max-height: 1000px;
 }
 
 @media (max-width: 767px)
@@ -206,9 +218,6 @@ body {
     .content__info {
         flex-direction: column;
     }
-    .content__image{
-        margin: 0 auto;
-    }
     .content__text {
         height: 90px;
         line-height: 18px;
@@ -218,11 +227,15 @@ body {
         display: none;
     }
     .content__image {
+        margin: 0 auto;
         width: 320px;
     }
 
 }
 @media (min-width:768px) and (max-width: 1119px){
+    .content__info {
+        flex-wrap: nowrap;
+    }
     .content__info-text-wrapper {
         margin: 0 24px;
     }
@@ -231,16 +244,17 @@ body {
     }
     .content__text {
         margin-bottom: 10px;
-        height: 160px;
-        width: 312px;
+        max-height: 160px;
         line-height: 20px;
         margin-right: 24px;
     }
     .content__image {
-        width: 360px;
-        max-height: 210px;
+        min-width: 360px;
+        min-height: 210px;
         border-top-right-radius: 6px;
         border-top-left-radius: 6px;
+        margin-right: 25px;
+        align-self: flex-start;
     }
     .header{
         padding: 0 24px;
@@ -255,6 +269,11 @@ body {
     }
 }
 @media (min-width: 1120px) {
+    .content__info {
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+
     .content__info-text-wrapper {
         margin: 0 34px;
     }
@@ -304,16 +323,16 @@ body {
     }
 
     .content__text {
-        height: 160px;
-        width: 490px;
+        max-height: 160px;
         line-height: 20px;
         margin-bottom: 14px;
-        line-height: 20px;
     }
     .content__image {
-        width: 532px;
+        min-width: 532px;
         border-top-right-radius: 6px;
         border-top-left-radius: 6px;
+        margin-right: 29px;
+        align-self: flex-start;
     }
     .content__nav-button {
         margin-bottom: 14px;
