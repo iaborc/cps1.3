@@ -288,7 +288,7 @@ body {
         font-family: 'TT Lakes Condensed', "Arial", sans-serif;
         font-weight: 500;
         font-size: 16px;
-        letter-spacing: 0.2px;
+        letter-spacing: .2px;
     }
     .content__header-button-label {
         margin-right: 8px;
