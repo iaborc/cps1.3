@@ -99,11 +99,10 @@ label{cursor: pointer;}
     position: relative;
     margin: 32px 0 0 24px;
     vertical-align: center;
-    transition: color 0.5s;
+    transition: color 0.7s;
 }
-.nav__radio-label:hover, .footer__radio-label:hover, .footer__text:hover{
+.nav__radio-label:hover, .footer__radio-label:hover, .footer__link:hover{
     color: #FF3E79;
-    transition: color 0.5s;
 }
 .nav__radio:checked + .nav__radio-label, .footer__radio:checked + .footer__radio-label{
     color: #7E7E82;
@@ -174,15 +173,24 @@ label{cursor: pointer;}
 .footer__button:not(:last-child){
     margin-right: 16px;
 }
-.footer__text+.footer__text{
+.footer__link:not(:first-child){
     margin-top: 12px;
+}
+.footer__link{
+    transition: color .7s;
 }
 .footer__radio{
     display: none;
 }
-.footer__text {
-    cursor: pointer;
+.footer__radio-label {
+    transition: color .7s;
 }
 .footer__radio-label:not(:last-child) {
     margin-right: 7px;
+}
+.link{
+    cursor: pointer;
+    display: block;
+    color: black;
+    text-decoration: none;
 }
